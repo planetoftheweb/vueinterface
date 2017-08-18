@@ -351,22 +351,27 @@ body {
 *********************************************/
 .reveal .code-primary {
   background-color: #0077B5 !important;
+  margin: 5px;
   color: #FFF !important; }
 
 .reveal .code-success {
   background-color: #5cb85c !important;
+  margin: 5px;
   color: #FFF !important; }
 
 .reveal .code-info {
   background-color: #5bc0de !important;
+  margin: 5px;
   color: #FFF !important; }
 
 .reveal .code-warning {
   background-color: #E68523 !important;
+  margin: 5px;
   color: #FFF !important; }
 
 .reveal .code-danger {
   background-color: #D9534E !important;
+  margin: 5px;
   color: #FFF !important; }
 
 /*********************************************
