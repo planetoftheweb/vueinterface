@@ -1,14 +1,12 @@
 <template>
   <div id="main-app">
-      <ul class="appointment-list"
-        v-for="(item, i) in theAppointments"
-        :key="i">
-        <li>{{item.petName}}</li>
-      </ul>
+    <appointment-list
+      :appointments = 'theAppointments' />
   </div>
 </template>
 
 <script>
+import AppointmentList from './AppointmentList.vue';
 
 export default {
   name: 'MainApp',
@@ -17,6 +15,11 @@ export default {
       theAppointments: []
     } //return
   }, //data
+
+  components: {
+    'appointment-list': AppointmentList
+  }, //components
+
   created: function() {
     $.getJSON('./builds/appointments.json')
       .done( info =>  {
@@ -25,13 +28,3 @@ export default {
   } //created
 } //default
 </script>
-
-<style scoped>
-  .appointment-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    margin: 10px 5%;
-    font-size: 1.7rem;
-  }
-</style>
