@@ -6,6 +6,8 @@
 </template>
 
 <script>
+
+import moment from 'moment';
 import AppointmentList from './AppointmentList.vue';
 
 export default {
