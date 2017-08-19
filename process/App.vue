@@ -1,5 +1,6 @@
 <template>
   <div id="main-app">
+    <add-appointment />
     <appointment-list
       :appointments = 'theAppointments' />
   </div>
@@ -8,6 +9,7 @@
 <script>
 
 import moment from 'moment';
+import AddAppointment from './AddAppointment.vue';
 import AppointmentList from './AppointmentList.vue';
 
 export default {
@@ -19,6 +21,7 @@ export default {
   }, //data
 
   components: {
+    'add-appointment': AddAppointment,
     'appointment-list': AppointmentList
   }, //components
 
