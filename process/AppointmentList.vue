@@ -32,6 +32,6 @@ export default {
     padding: 0;
     list-style-type: none;
     margin: 10px 5%;
-    font-size: 1.7rem;
+    font-size: 1rem;
   }
 </style>
