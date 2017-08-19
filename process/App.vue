@@ -1,6 +1,7 @@
 <template>
   <div id="main-app">
-    <add-appointment />
+    <add-appointment 
+      @addRecord="addAppointment" />
     <appointment-list
       :appointments = 'theAppointments' />
   </div>
@@ -30,6 +31,13 @@ export default {
       .done( info =>  {
         this.theAppointments = info;
     }); //getJSON
-  } //created
+  }, //created
+
+  methods: {
+    AddAppointment: function(apt) {
+      this.theAppointments.push(apt);
+    } //addAppointment
+  } //methods
+
 } //default
 </script>
