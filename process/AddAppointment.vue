@@ -75,7 +75,9 @@ export default {
   methods: {
     requestAdd: function() {
       this.$emit('addRecord', this.formData);
-    }
+      this.formData = [];
+      this.hidepanel = true;
+    } //requestAdd
   } //methods
 } //default
 </script>

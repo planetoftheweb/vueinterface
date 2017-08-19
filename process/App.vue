@@ -34,7 +34,7 @@ export default {
   }, //created
 
   methods: {
-    AddAppointment: function(apt) {
+    addAppointment: function(apt) {
       this.theAppointments.push(apt);
     } //addAppointment
   } //methods
