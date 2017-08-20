@@ -74,7 +74,13 @@ export default {
   }, //data
   methods: {
     requestAdd: function() {
-      this.$emit('addRecord', this.formData);
+      var parsedData = {
+        petName: this.formData.petName,
+        petOwner: this.formData.petOwner,
+        aptDate: this.formData.aptDate + ' ' + this.formData.aptTime,
+        aptNotes: this.formData.aptNotes
+      }
+      this.$emit('addRecord', parsedData);
       this.formData = [];
       this.hidepanel = true;
     } //requestAdd
