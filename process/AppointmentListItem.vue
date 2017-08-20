@@ -10,15 +10,27 @@
     <div class="pet-info media-body">
 
       <div class="pet-head">
-        <span class="pet-name">{{appointment.petName}}</span>
+        <span class="pet-name"
+          contenteditable="true"
+          ref="petName"
+          @blur="requestUpdate('petName')"
+        >{{appointment.petName}}</span>
         <span class="apt-date pull-right">{{this.formattedDate}}</span>
       </div><!-- pet-head -->
 
       <div class="owner-name">
         <span class="label-item">Owner:</span>
-        <span>{{appointment.petOwner}}</span>
+        <span
+          ontenteditable="true"
+          ref="petOwner"
+          @blur="requestUpdate('petOwner')"
+        >{{appointment.petOwner}}</span>
       </div>
-      <div class="apt-notes">{{appointment.aptNotes}}</div>
+      <div class="apt-notes"              
+        contenteditable="true"
+        ref="aptNotes"
+        @blur="requestUpdate('aptNotes')"
+      >{{appointment.aptNotes}}</div>
 
     </div><!-- pet-info -->
 
@@ -38,7 +50,12 @@ export default {
 
     requestRemoval: function() {
       this.$parent.$emit('remove', this.appointment);
-    } //requestremoval
+    }, //requestremoval
+
+    requestUpdate: function(myRef) {
+      this.appointment[myRef] = 
+        this.$refs[myRef].innerText;
+    }
 
   }, //methods
 
