@@ -5,7 +5,7 @@
     <search-appointments 
       @searchRecords='searchAppointments' />
     <appointment-list
-      :appointments = 'searchedApts'
+      :appointments = 'filteredApts'
       @remove = 'removeItem' />
   </div>
 </template>
@@ -23,7 +23,9 @@ export default {
   data() {
     return {
       theAppointments: [],
-      searchTerms: ''
+      searchTerms: '',
+      filterKey: 'petName',
+      filterDir: 'asc'
     } //return
   }, //data
 
@@ -65,7 +67,14 @@ export default {
           (item.aptNotes.toLowerCase().match(this.searchTerms.toLowerCase()))
         )
       }.bind(this));
-    }
-  }
+    }, //searchedApts
+
+    filteredApts: function() {
+      return _.orderBy(this.searchedApts, function(item) {
+        return item[this.filterKey].toLowerCase();
+      }.bind(this), this.filterDir);
+    } //filteredApts
+
+  } //computed
 } //default
 </script>
