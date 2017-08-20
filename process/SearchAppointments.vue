@@ -4,7 +4,8 @@
 
       <div class="input-group">
 
-        <input id="SearchApts" placeholder="Search" type="text" class="form-control" aria-label="Search Appointments" />
+        <input id="SearchApts" placeholder="Search" type="text" class="form-control" aria-label="Search Appointments"
+        v-model="searchTerm" />
 
         <div class="input-group-btn">
           <button type="button" class="btn btn-primary dropdown-toggle"
@@ -35,6 +36,16 @@
 export default {
 
   name: 'SearchAppointments',
+  data() {
+    return {
+      searchTerm: ''
+    } //return
+  }, //data
 
+  watch: {
+    searchTerm: function() {
+      this.$emit('searchRecords', this.searchTerm);
+    } //searchTerm
+  } //watch
 } // export
 </script>

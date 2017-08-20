@@ -2,7 +2,8 @@
   <div id="main-app">
     <add-appointment 
       @addRecord="addAppointment" />
-    <search-appointments />
+    <search-appointments 
+      @searchRecords='searchAppointments' />
     <appointment-list
       :appointments = 'theAppointments'
       @remove = 'removeItem' />
@@ -21,7 +22,8 @@ export default {
   name: 'MainApp',
   data() {
     return {
-      theAppointments: []
+      theAppointments: [],
+      searchTerms: ''
     } //return
   }, //data
 
@@ -46,9 +48,25 @@ export default {
 
     removeItem: function(apt) {
       this.theAppointments = _.without(this.theAppointments, apt)
-    }
+    }, //removeItem
 
-  } //methods
+    searchAppointments: function(terms) {
+      this.searchTerms = terms;
+    } //searchAppointments
+
+  }, //methods
+
+  computed: {
+    searchedApts: function() {
+      return this.theAppointments.filter(function(item) {
+        return (
+          (item.petName.toLowerCase().match(this.searchTerms.toLowerCase())) ||
+          (item.petOwner.toLowerCase().match(this.searchTerms.toLowerCase())) ||
+          (item.aptNotes.toLowerCase().match(this.searchTerms.toLowerCase()))
+        ) //matches
+      }) // filter
+    } //searchedApts
+  } //computed
 
 } //default
 </script>
