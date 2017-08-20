@@ -3,7 +3,11 @@
     <add-appointment 
       @addRecord="addAppointment" />
     <search-appointments 
-      @searchRecords='searchAppointments' />
+      :myKey = "filterKey"
+      :myDir = "filterDir"
+      @searchRecords='searchAppointments'
+      @keyChange = "changeKey"
+      @dirChange = "changeDir" />
     <appointment-list
       :appointments = 'filteredApts'
       @remove = 'removeItem' />
@@ -54,7 +58,15 @@ export default {
 
     searchAppointments: function(terms) {
       this.searchTerms = terms;
-    } //searchAppointments
+    }, //searchAppointments
+
+    changeKey: function(value) {
+      this.filterKey = value;
+    }, //changeKey
+
+    changeDir: function(value) {
+      this.filterDir = value;
+    }, //changeKey
 
   }, //methods
 
