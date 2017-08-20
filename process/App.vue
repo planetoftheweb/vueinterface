@@ -54,19 +54,8 @@ export default {
       this.searchTerms = terms;
     } //searchAppointments
 
-  }, //methods
+  } //methods
 
-  computed: {
-    searchedApts: function() {
-      return this.theAppointments.filter(function(item) {
-        return (
-          (item.petName.toLowerCase().match(this.searchTerms.toLowerCase())) ||
-          (item.petOwner.toLowerCase().match(this.searchTerms.toLowerCase())) ||
-          (item.aptNotes.toLowerCase().match(this.searchTerms.toLowerCase()))
-        ) //matches
-      }) // filter
-    } //searchedApts
-  } //computed
 
 } //default
 </script>
