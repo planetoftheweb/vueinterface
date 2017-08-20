@@ -2,6 +2,7 @@
   <div id="main-app">
     <add-appointment 
       @addRecord="addAppointment" />
+    <search-appointments />
     <appointment-list
       :appointments = 'theAppointments'
       @remove = 'removeItem' />
@@ -13,6 +14,7 @@
 import _ from 'lodash';
 import moment from 'moment';
 import AddAppointment from './AddAppointment.vue';
+import SearchAppointments from './SearchAppointments.vue';
 import AppointmentList from './AppointmentList.vue';
 
 export default {
@@ -25,6 +27,7 @@ export default {
 
   components: {
     'add-appointment': AddAppointment,
+    'search-appointments': SearchAppointments,
     'appointment-list': AppointmentList
   }, //components
 
