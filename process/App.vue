@@ -3,12 +3,14 @@
     <add-appointment 
       @addRecord="addAppointment" />
     <appointment-list
-      :appointments = 'theAppointments' />
+      :appointments = 'theAppointments'
+      @remove = 'removeItem' />
   </div>
 </template>
 
 <script>
 
+import _ from 'lodash';
 import moment from 'moment';
 import AddAppointment from './AddAppointment.vue';
 import AppointmentList from './AppointmentList.vue';
@@ -34,9 +36,15 @@ export default {
   }, //created
 
   methods: {
+
     addAppointment: function(apt) {
       this.theAppointments.push(apt);
-    } //addAppointment
+    }, //addAppointment
+
+    removeItem: function(apt) {
+      this.theAppointments = _.without(this.theAppointments, apt)
+    }
+
   } //methods
 
 } //default

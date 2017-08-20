@@ -2,7 +2,8 @@
   <li class="pet-item media">
 
     <div class="media-left">
-      <button class="pet-delete btn btn-xs btn-danger">
+      <button class="pet-delete btn btn-xs btn-danger"
+        @click="requestRemoval">
       <span class="glyphicon glyphicon-remove"></span></button>
     </div><!-- media-left -->
 
@@ -33,12 +34,20 @@ import moment from 'moment';
 export default {
   name: 'PetAppointmentItem',
   props: ['appointment'],
+  methods: {
+
+    requestRemoval: function() {
+      this.$parent.$emit('remove', this.appointment);
+    } //requestremoval
+
+  }, //methods
+
   computed: {
     formattedDate: function() {
       return moment(new Date(this.appointment.aptDate)).format('MM-DD-YY, h:mm a');
-    }
-  }
-}
+    } //formattedDate
+  } //computed
+} //default
 </script>
 
 <style scoped>
