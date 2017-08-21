@@ -6,7 +6,7 @@ opinionated reveal.js
 
 ## Installing
 
-- Grab/Fork from [repo](http://github.com/planetoftheweb/rayveal)
+- Grab/Fork from [repo][1]
 - `docs` folder has presentation
 - `slides/demo.md` subfolder has main markdown
 
@@ -16,9 +16,9 @@ opinionated reveal.js
 
 - Rayveal assumes you want to use markdown to create slides. The `index.html` file points to a markdown file in `slides/demo.md`.
 
-- It does whatever [reveal.js can](https://github.com/hakimel/reveal.js) can. You can add invisible notes for yourself using two &gt;&gt; after a carriage return (<a href="slides/demo.md">see markdown file</a>)
+- It does whatever [reveal.js can][2] can. You can add invisible notes for yourself using two &gt;&gt; after a carriage return (<a href="slides/demo.md">see markdown file</a>)
 
->> Author Notes: Author notes are similar to markdown blockquotes, but you use double greater than signs. They won't appear on your slides, so I personally use them as reading notes, but Reveal.js has a presentation mode that allows you to see them in your slides.
+> > Author Notes: Author notes are similar to markdown blockquotes, but you use double greater than signs. They won't appear on your slides, so I personally use them as reading notes, but Reveal.js has a presentation mode that allows you to see them in your slides.
 
 ---
 
@@ -37,18 +37,18 @@ opinionated reveal.js
 ```
 
 
->> Author Notes: Author notes are similar to markdown blockquotes, but you use double greater than signs. They won't appear on your slides, so I personally use them as reading notes, but Reveal.js has a presentation mode that allows you to see them in your slides.
+> > Author Notes: Author notes are similar to markdown blockquotes, but you use double greater than signs. They won't appear on your slides, so I personally use them as reading notes, but Reveal.js has a presentation mode that allows you to see them in your slides.
 
 ---
 
 ## Multiple slides
 
-You can use multiple markdown files within the same slide, just add a different slide in the slides folder and [link to it](?d=Bootstrap 4 Cards&). (see [markdown](slides/demo.md) file for how it works)
+You can use multiple markdown files within the same slide, just add a different slide in the slides folder and [link to it](?d=Bootstrap 4 Cards&). (see [markdown][3] file for how it works)
 ---
 
 ## Sidebar Menu
 
-Press the `m` key to show [sidebar menu](https://github.com/denehyg/reveal.js-menu). You can use it to jump to different slides. There is also an [index.txt](slides/index.txt) file in the slides menu, where you can add other slides you want to feature in your menu.
+Press the `m` key to show [sidebar menu][4]. You can use it to jump to different slides. There is also an [index.txt][5] file in the slides menu, where you can add other slides you want to feature in your menu.
 
 ---
 
@@ -61,13 +61,13 @@ Presentations live in a docs folder within the main project, simply upload the d
 
 1. Are on by default
 2. You can write HTML lists
-  - if you don't want them
+  3. if you don't want them
 
 ---
 
-  ## Code options
+  \#\# Code options
 
-- [Bootstrap](http://getbootstrap.com)-like colors for code
+- [Bootstrap][6]-like colors for code
 - <code class="code-primary">primary</code> <code class="code-success">success</code> <code class="code-info">info</code> <code class="code-warning">warning</code> <code class="code-danger">danger</code>
 - <a class="tooltip" href="#">`tooltips`<span>for overlay explanations</span></a> on rollover
 
@@ -78,7 +78,7 @@ Presentations live in a docs folder within the main project, simply upload the d
 ## <i class="fa fa-html5"></i> Has Icon
 
 - Template with an icon
-- Preloading [font-awesome](http://fontawesome.io) <small>by Dave Gandy</small>
+- Preloading [font-awesome][7] <small>by Dave Gandy</small>
 - &lt;!-- .slide: data-state="hasicon" --&gt;
 
 ---
@@ -89,7 +89,7 @@ Presentations live in a docs folder within the main project, simply upload the d
 
 <small>&lt;!-- .slide: data-state="textonvideo" data-background-video="http://planetoftheweb.com/i/video.mp4" --&gt;</small>
 
->> Note: You also have the option of creating video as a background using regular reveal.js tags.
+> > Note: You also have the option of creating video as a background using regular reveal.js tags.
 
 ---
 
@@ -133,8 +133,16 @@ Syntax highlighted, editable by default
 
 Here's what a table looks like. Use the <a href="http://www.tablesgenerator.com/markdown_tables">tables generator</a> to help you write the markdown.
 
-| |  Extra small <small>< 768px</small> | Small <small> ≥ 768px</small> | Medium <small>≥992px</small> | Large <small>≥1200px</small> |
+| |  Extra small <small>\< 768px</small> | Small <small> ≥ 768px</small> | Medium <small>≥992px</small> | Large <small>≥1200px</small> |
 |---|---|---|---|---|
-| **Container**	| Auto | 750px | 970px | 1170px |
-| **Size**	| .col-xs- | .col-sm- | .col-md- | .col-lg- |
-| **Column width** | Auto | ~62px | ~81px | ~97px |
+| **Container** | Auto | 750px | 970px | 1170px |
+| **Size**  | .col-xs- | .col-sm- | .col-md- | .col-lg- |
+| **Column width** | Auto | \~62px | \~81px | \~97px |
+
+[1]:	http://github.com/planetoftheweb/rayveal
+[2]:	https://github.com/hakimel/reveal.js
+[3]:	slides/demo.md
+[4]:	https://github.com/denehyg/reveal.js-menu
+[5]:	slides/index.txt
+[6]:	http://getbootstrap.com
+[7]:	http://fontawesome.io
