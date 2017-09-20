@@ -21,7 +21,7 @@
       <div class="owner-name">
         <span class="label-item">Owner:</span>
         <span
-          ontenteditable="true"
+          contenteditable="true"
           ref="petOwner"
           @blur="requestUpdate('petOwner')"
         >{{appointment.petOwner}}</span>
