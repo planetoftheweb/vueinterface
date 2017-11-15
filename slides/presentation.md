@@ -1,5 +1,5 @@
 <!-- .slide: data-state="title" -->
-# Understanding Vue.js
+# Modular Apps with Vue.js
 
 > > Author Notes: I wanted to start by showing you the basics of the Vue.js framework and show you how to put together a small application. Most of this content comes from my course called Building an Interface with Vue.js on Lynda.com and LinkedIn Learning.
 
